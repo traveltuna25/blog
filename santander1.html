@@ -1,86 +1,19 @@
 ﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <title>Notion Carousel</title>
-    <style>
-        body {
-            margin: 0;
-            background: transparent;
-            font-family: sans-serif;
-        }
-
-        .carousel {
-            position: relative;
-            width: 100%;
-            max-width: 1000px;
-            margin: auto;
-            overflow: hidden;
-            border-radius: 12px;
-        }
-
-        .slides {
-            display: flex;
-            transition: transform 0.4s ease;
-        }
-
-        .slide {
-            min-width: 100%;
-        }
-
-        .slide img {
-            width: 100%;
-            display: block;
-        }
-
-        .btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0,0,0,0.5);
-            color: white;
-            border: none;
-            font-size: 20px;
-            padding: 8px 12px;
-            cursor: pointer;
-        }
-
-        .prev { left: 10px; }
-        .next { right: 10px; }
-    </style>
+    <meta charset="UTF-8">
+    <title>Carousel</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="carousel">
-    <div class="slides" id="slides">
-        <div class="slide"><img src="https://raw.githubusercontent.com/traveltuna25/blog/refs/heads/main/images/IMG_0532.JPG"></div>
-        <div class="slide"><img src="https://picsum.photos/id/1016/800/500"></div>
-        <div class="slide"><img src="https://picsum.photos/id/1018/800/500"></div>
-    </div>
+    <div class="slides" id="slides"></div>
 
     <button class="btn prev" onclick="prev()">‹</button>
     <button class="btn next" onclick="next()">›</button>
 </div>
 
-<script>
-    let index = 0;
-    const slides = document.getElementById('slides');
-    const total = slides.children.length;
-
-    function update() {
-        slides.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    function next() {
-        index = (index + 1) % total;
-        update();
-    }
-
-    function prev() {
-        index = (index - 1 + total) % total;
-        update();
-    }
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>

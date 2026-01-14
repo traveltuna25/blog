@@ -1,0 +1,19 @@
+﻿.carousel {
+    max-width: 600px;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.slides {
+    display: flex;
+    transition: transform .4s ease;
+}
+
+.slide {
+    min-width: 100%;
+}
+
+.slide img {
+    width: 100%;
+    display: block;
+}
