@@ -1,12 +1,20 @@
-﻿.carousel {
-    max-width: 600px;
+﻿body {
+    margin: 0;
+    background: transparent;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 14px;
 }
 
 .slides {
     display: flex;
-    transition: transform .4s ease;
+    transition: transform 0.4s ease;
 }
 
 .slide {
@@ -15,5 +23,54 @@
 
 .slide img {
     width: 100%;
+    height: auto;
     display: block;
+    object-fit: cover;
+}
+
+/* Стрелки */
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.nav:hover {
+    background: rgba(0, 0, 0, 0.75);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.nav:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.prev {
+    left: 12px;
+}
+
+.next {
+    right: 12px;
+}
+
+/* Мобилки */
+@media (max-width: 600px) {
+    .nav {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+    }
 }
